@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Engineering</title>
+
+    <link rel="stylesheet" href="style.css" />
+
+    <!-- import map -->
+    <script type="importmap">
+    {
+        "imports": {
+        "three": "https://unpkg.com/three@0.160.0/build/three.module.js",
+        "GLTFLoader": "https://unpkg.com/three@0.160.0/examples/jsm/loaders/GLTFLoader.js"
+        }
+    }
+    </script>
+</head>
+
+<body>
+
+    <div class="loader-screen">
+        <div class="loader-content">
+            <h1 class="loader-title">
+                Ingeniería que<br>
+                resiste el tiempo
+            </h1>
+            <div class="loader-line-wrap">
+                <div class="loader-line"></div>
+            </div>
+        </div>
+    </div>
+    <section class="hero">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h1>
+                Engineering<br>
+                the Future
+            </h1>
+        </div>
+        <!-- 3d model -->
+        <div class="hero-3d">
+            <canvas id="bannerCanvas"></canvas>
+        </div>
+
+    </section>
+
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+    <script type="module" src="script.js"></script>
+
+</body>
+
+</html>
