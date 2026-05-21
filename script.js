@@ -16,7 +16,7 @@ const canvas = document.getElementById(
 const scene = new THREE.Scene();
 
 scene.background =
-  new THREE.Color(0x05070b);
+  new THREE.Color(0xffffff);
 
 /* camera */
 
@@ -59,12 +59,17 @@ renderer.setPixelRatio(
 renderer.outputEncoding =
   THREE.sRGBEncoding;
 
+renderer.toneMapping =
+  THREE.ACESFilmicToneMapping;
+
+renderer.toneMappingExposure = 1.15;
+
 /* lights */
 
 const ambient =
   new THREE.AmbientLight(
     0xffffff,
-    1.5
+    2.8
   );
 
 scene.add(ambient);
@@ -78,9 +83,9 @@ const directional =
   );
 
 directional.position.set(
-  8,
-  12,
-  10
+  5, 
+  8, 
+  12
 );
 
 scene.add(directional);
@@ -89,9 +94,9 @@ scene.add(directional);
 
 const blueFill =
   new THREE.PointLight(
-    0x4d7cff,
-    1.8,
-    40
+    0xbfd4ff,
+    0.6,
+    30
   );
 
 blueFill.position.set(
@@ -184,10 +189,10 @@ loader.load(
         if (child.material) {
 
           child.material.metalness =
-            0.85;
+            0.15;
 
           child.material.roughness =
-            0.25;
+            0.75;
 
         }
 

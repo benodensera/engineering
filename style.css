@@ -65,9 +65,8 @@ body {
     justify-content: center;
     width: 100%;
     height: 125vh;
-    background: #05070b;
+    background: #ffffff;
     overflow: hidden;
-
 }
 
 /* 3d wrapper */
@@ -95,11 +94,11 @@ body {
 .hero-overlay {
     position: absolute;
     inset: 0;
-    background:
+    /*background:
         radial-gradient(circle at center,
             transparent 0%,
             rgba(0, 0, 0, .15) 50%,
-            rgba(0, 0, 0, .55) 100%);
+            rgba(0, 0, 0, .55) 100%);*/
     z-index: 2;
 }
 
@@ -113,9 +112,13 @@ body {
 }
 
 .hero-content h1 {
-    font-size: 7vw;
+    position: absolute;
+    display: block;
+    top: 150px;
+    right: 450px;
+    font-size: 3rem;
     line-height: .9;
     letter-spacing: -0.05em;
     font-weight: 700;
-    color: white;
+    color: rgb(0, 0, 0);
 }
