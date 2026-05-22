@@ -4,6 +4,10 @@
     margin: 0;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     overflow-x: hidden;
     font-family: Inter, sans-serif;
@@ -357,7 +361,7 @@ body {
     text-transform: uppercase;
     text-decoration: none;
     color: #000;
-    border: 1px solid rgb(0 0 0 / 12%);
+    border: 1px solid var(--color-accent);
     border-radius: 5px;
     backdrop-filter: blur(12px);
     transition:
@@ -367,7 +371,7 @@ body {
 
 .nav-cta:hover {
     background: rgb(0 0 0 / 4%);
-    border-color: rgb(0 0 0 / 25%);
+    border-color: var(--color-accent-light);
 }
 
 /* reusable reveal after loader */
