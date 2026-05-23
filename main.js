@@ -43,7 +43,8 @@ animate();
 // reveal after loader function
 
 window.revealAfterLoader = function () {
-    const elements = document.querySelectorAll(".reveal-element");
+    
+    const elements = document.querySelectorAll(".reveal-element, .nav-reveal");
 
     elements.forEach((element) => {
         const delay = element.dataset.delay || 0;
@@ -53,3 +54,18 @@ window.revealAfterLoader = function () {
         }, delay);
     });
 };
+
+
+
+// scroll to next section
+
+const scrollButton = document.querySelector(".scroll-indicator");
+
+if (scrollButton) {
+    scrollButton.addEventListener("click", () => {
+        window.scrollTo({
+            top: window.innerHeight,
+            behavior: "smooth",
+        });
+    });
+}

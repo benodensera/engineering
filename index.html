@@ -1,6 +1,5 @@
 <!doctype html>
 <html lang="en">
-
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -34,9 +33,8 @@
     </head>
 
     <body>
-
         <!-- navigation -->
-        <nav class="main-nav reveal-element">
+        <nav class="main-nav nav-reveal">
             <!-- left -->
             <div class="nav-left">
                 <a href="#" class="nav-logo"> ESCALA </a>
@@ -46,7 +44,7 @@
             <div class="nav-center"></div>
             <!-- right -->
             <div class="nav-right">
-                <a href="#" class="nav-link"> Inicio </a>
+                <a href="#" class="nav-link active"> Inicio </a>
                 <a href="#" class="nav-link"> Proyectos </a>
                 <a href="#" class="nav-link"> Servicios </a>
                 <a href="#" class="nav-cta"> Iniciar Proyecto </a>
@@ -78,10 +76,12 @@
         <section class="hero">
             <div class="hero-overlay"></div>
             <div class="hero-content">
-                <h1 class="reveal-element" data-delay="300">
-                    Construyendo<br />
-                    el Futuro
-                </h1>
+                <h3 class="reveal-element" data-delay="600">Estructuras & Proyectos</h3>
+                <h1 class="reveal-element" data-delay="600">Precisión en Cada Estructura</h1>
+                <p class="reveal-element" data-delay="600">
+                    Especialistas en cálculo estructural y dirección de proyectos de infraestructura
+                    de alta complejidad.
+                </p>
             </div>
             <!-- 3d model -->
             <div class="hero-3d">
@@ -142,11 +142,17 @@
                     <span>Infraestructura</span>
                 </div>
             </div>
+            <div class="scroll-wrapper reveal-element" data-delay="1900">
+                <span class="scroll-text">Explorar</span>
+
+                <button class="scroll-indicator" aria-label="Scroll to next section">
+                    <span></span>
+                </button>
+            </div>
         </section>
 
         <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
         <script type="module" src="./js/hero-section.js"></script>
         <script src="./main.js"></script>
-        
     </body>
 </html>

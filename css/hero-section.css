@@ -75,17 +75,51 @@
     text-align: center;
 }
 
+.hero-content h3 {
+    position: absolute;
+    top: 72px;
+    right: 250px;
+    width: 450px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    letter-spacing: 0.3px;
+    text-align: left;
+    text-transform: uppercase;
+    color: var(--color-accent);
+    opacity: 0;
+    filter: blur(9px);
+    transform: translateY(90px);
+    will-change: transform, opacity, filter;
+}
+
 .hero-content h1 {
     position: absolute;
-    top: 150px;
-    right: 350px;
-    display: block;
+    top: 100px;
+    right: 250px;
+    width: 450px;
     font-family: var(--font-main);
     font-size: 3rem;
     font-weight: 700;
-    line-height: 0.9;
+    line-height: 1;
     letter-spacing: -0.05em;
+    text-align: left;
     color: rgb(0 0 0);
+    opacity: 0;
+    filter: blur(9px);
+    transform: translateY(90px);
+    will-change: transform, opacity, filter;
+}
+
+.hero-content p {
+    position: absolute;
+    top: 210px;
+    right: 250px;
+    width: 450px;
+    font-family: var(--font-main);
+    font-weight: 100;
+    line-height: 1;
+    text-align: justify;
+    color: var(--color-muted-text);
     opacity: 0;
     filter: blur(9px);
     transform: translateY(90px);
@@ -107,6 +141,79 @@
         opacity: 1;
         filter: blur(0);
         transform: translateY(0);
+    }
+}
+
+/* scroll wrapper */
+
+.scroll-wrapper {
+    position: absolute;
+    right: 6rem;
+    bottom: 6rem;
+    z-index: var(--z-floating);
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+/* scroll text */
+
+.scroll-text {
+    font-size: 0.72rem;
+    font-weight: 500;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: rgb(0 0 0 / 45%);
+}
+
+/* scroll indicator */
+
+.scroll-indicator {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+    background: var(--color-title-main);
+    border: none;
+    border-radius: 50%;
+    transition:
+        transform 0.5s cubic-bezier(0.16, 1, 0.3, 1),
+        border-color 0.5s ease,
+        background 0.5s ease;
+}
+
+/* arrow */
+
+.scroll-indicator span {
+    position: relative;
+    width: 1px;
+    height: 18px;
+    background: #fff;
+    animation: scroll-arrow-float 2.1s ease-in-out infinite;
+}
+
+.scroll-indicator span::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 7px;
+    height: 7px;
+    border-right: 1px solid #fff;
+    border-bottom: 1px solid #fff;
+    transform: translateX(-50%) rotate(45deg);
+}
+
+@keyframes scroll-arrow-float {
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(3px);
     }
 }
 

@@ -17,12 +17,7 @@ const scene = new THREE.Scene();
 scene.background = new THREE.Color(0xffffff);
 
 // camera
-const camera = new THREE.PerspectiveCamera(
-    35,
-    window.innerWidth / window.innerHeight,
-    0.1,
-    1000,
-);
+const camera = new THREE.PerspectiveCamera(35, window.innerWidth / window.innerHeight, 0.1, 1000);
 
 camera.position.set(0, 0, 25);
 
@@ -173,8 +168,7 @@ function animate() {
             baseRotationY += 0.00015;
 
             // follow mouse */
-            model.rotation.y +=
-                (baseRotationY + targetRotY - model.rotation.y) * 0.025;
+            model.rotation.y += (baseRotationY + targetRotY - model.rotation.y) * 0.025;
 
             model.rotation.x += (targetRotX - model.rotation.x) * 0.025;
         }
@@ -234,22 +228,21 @@ window.addEventListener(
             "<",
         );
 
-        // screen split
-        tl.to(".loader-screen", {
-            clipPath: "polygon(0 0,100% 0,100% 0,0 0)",
+        // smooth dissolve
+        tl.call(() => {
+            const loaderScreen = document.querySelector(".loader-screen");
 
-            duration: 1.2,
+            loaderScreen.classList.add("is-hidden");
 
-            ease: "power4.inOut",
+            setTimeout(() => {
+                loaderScreen.remove();
+            }, 1600);
         });
 
-        // animation small wait
-        tl.to(
-            {},
-            {
-                duration: 0,
-            },
-        );
+        // reveal content
+        tl.call(() => {
+            revealAfterLoader();
+        });
 
         // start model intro
         tl.call(
@@ -287,15 +280,6 @@ window.addEventListener(
             null,
             "-=1.8",
         );
-
-        // remove loader
-        tl.set(".loader-screen", {
-            display: "none",
-        });
-
-        tl.call(() => {
-            revealAfterLoader();
-        });
     },
 );
 
