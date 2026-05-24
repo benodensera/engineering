@@ -14,7 +14,31 @@ let currentY = mouseY;
 const cursorOffsetX = -7.9;
 const cursorOffsetY = -7.9;
 
+
+
+// custom cursor only appears on hero section
+
+const heroSection = document.querySelector(".hero");
+
+let cursorActive = false;
+
+heroSection.addEventListener("mouseenter", () => {
+    cursorActive = true;
+
+    document.querySelector(".cursor-guides").style.opacity = "1";
+});
+
+heroSection.addEventListener("mouseleave", () => {
+    cursorActive = false;
+
+    document.querySelector(".cursor-guides").style.opacity = "0";
+});
+
 window.addEventListener("mousemove", (e) => {
+    if (!cursorActive) {
+        return;
+    }
+
     mouseX = e.clientX;
     mouseY = e.clientY;
 });

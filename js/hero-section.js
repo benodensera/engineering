@@ -93,7 +93,7 @@ loader.load(
         model = gltf.scene;
 
         // scale
-        model.scale.set(1.4, 1.4, 1.4);
+        model.scale.set(1, 1, 1);
 
         // initial rotation
         model.rotation.y = introStartRotation;
@@ -132,7 +132,7 @@ loader.load(
         const size = box.getSize(new THREE.Vector3());
         const maxDim = Math.max(size.x, size.y, size.z);
 
-        camera.position.z = maxDim * -1.9;
+        camera.position.z = -350;
         camera.lookAt(0, 0, 0);
 
         // start loop
