@@ -186,11 +186,9 @@
 
 /* arrow */
 
-.scroll-indicator span {
+.scroll-indicator svg {
     position: relative;
-    width: 1px;
-    height: 18px;
-    background: #fff;
+    color: #fff;
     animation: scroll-arrow-float 2.1s ease-in-out infinite;
 }
 
@@ -209,11 +207,11 @@
 @keyframes scroll-arrow-float {
     0%,
     100% {
-        transform: translateY(0);
+        transform: rotate(90deg) translateX(-1px);
     }
 
     50% {
-        transform: translateY(3px);
+        transform: rotate(90deg) translateX(1px);
     }
 }
 

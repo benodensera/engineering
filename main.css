@@ -427,6 +427,11 @@ body {
 
 /* active */
 
+.active,
+.nav-link:hover {
+    color: var(--color-accent);
+}
+
 .nav-link.active::after {
     opacity: 1;
     transform: translateX(-50%) scaleX(1);
@@ -458,4 +463,12 @@ body {
         filter: blur(0);
         transform: translateY(0);
     }
+}
+
+/* svg style */
+
+svg {
+    flex-shrink: 0;
+    width: 18px;
+    height: 18px;
 }

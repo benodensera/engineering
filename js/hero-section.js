@@ -79,7 +79,7 @@ const introTargetRotation = 0.1;
 
 // cursor
 
-let targetRotX = 0;
+// let targetRotX = 0; // vertical mouse motion
 let targetRotY = 0;
 
 // enable motion after intro
@@ -154,7 +154,7 @@ window.addEventListener("mousemove", (event) => {
 
     // rotation targets
     targetRotY = mouseX * 0.35;
-    targetRotX = mouseY * 0.15;
+    // targetRotX = mouseY * 0.15; // vertical mouse motion
 });
 
 // animation loop
@@ -170,7 +170,7 @@ function animate() {
             // follow mouse */
             model.rotation.y += (baseRotationY + targetRotY - model.rotation.y) * 0.025;
 
-            model.rotation.x += (targetRotX - model.rotation.x) * 0.025;
+            // model.rotation.x += (targetRotX - model.rotation.x) * 0.025; // vertical mouse motion
         }
     }
 
@@ -278,7 +278,7 @@ window.addEventListener(
                 }, 16);
             },
             null,
-            "-=1.8",
+            "-=0.9",
         );
     },
 );
